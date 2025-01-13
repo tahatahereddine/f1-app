@@ -1,0 +1,123 @@
+
+.comparison-container {
+    padding: 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comparison-header {
+    color: #cc0000;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comparison-select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comparison-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comparison-column {
+    flex: 1;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comparison-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comparison-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px auto;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comparison-list-item {
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+.clear-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #cc0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.compare-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #cc0000;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.comparison-chart {
+    margin-top: 40px;
+}
+
+.stat-comparison {
+    margin-bottom: 20px;
+}
+
+.stat-bars {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-bar {
+    flex: 1;
+    text-align: center;
+}
+
+.bar1 {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+}
+
+.bar2 {
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+}
+

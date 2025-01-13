@@ -1,0 +1,88 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1f1f1f;
+    padding: 10px 20px;
+    color: white;
+    border-bottom: 3px solid red;
+}
+  .navbar-left .f1-logo {
+    height: 40px;
+  }
+  
+  .navbar-center .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-center .nav-links li {
+    position: relative;
+  }
+  
+  .navbar-center .nav-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+  }
+  
+  .navbar-center .nav-links li:hover > a{
+    color: red;
+  }
+
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1f1f1f;
+    border: 1px solid red;
+    padding: 10px 0;
+    list-style: none;
+    display: block;
+    min-width: 200px;
+    z-index: 10;
+  }
+  
+  .dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: red;
+    color: white !important;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .search-bar {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .profile-icon {
+    height: 30px;
+    border-radius: 50%;
+  }
+  
+  .profile-name {
+    font-size: 16px;
+  }
+  
