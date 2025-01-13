@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './DriverCard.css';
 import ReactCountryFlag from 'react-country-flag';
 
@@ -60,7 +61,9 @@ function DriverCard(props) {
                         <strong>Country:</strong> <br />
                         <span className="highlight">
                             <ReactCountryFlag countryCode={countryCode} /> {' '}
-                            {countryName || driver.country_of_birth_country_id}
+                            <Link to={`/country-info/${driver.country_of_birth_country_id}`} className="country-link">
+                                {countryName || driver.country_of_birth_country_id}
+                            </Link>, {driver.continent_name}
                         </span>
                     </p>
                     <p>

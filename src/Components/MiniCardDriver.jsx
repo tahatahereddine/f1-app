@@ -43,8 +43,8 @@ const MiniDriverCard = ({ driver, alpha2code }) => {
             <h2 style={{ fontSize: '1.4em', margin: '10px 0', color: '#cc0000' }}>
                 {driver.name}
             </h2>
-            <p style={{ margin: '5px 0' }}>
-                <strong>Nationality:</strong> {driver.nationality_country_id}{' '}
+            <p style={{ margin: '0px 0' , fontSize: '0.99em'}}>
+                <strong>Nationality:</strong> {driver.country_name}{' '}
                 <ReactCountryFlag 
                     countryCode={alpha2code}
                     style={{

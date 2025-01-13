@@ -48,14 +48,11 @@ const Navbar = () => {
           <li><Link to="/standings">Standings</Link></li>
           <li><Link to="/countries">Country</Link></li>
           <li><Link to="/compare-stats">Compare</Link></li>
-          <li><Link to="/blog">Blog</Link></li>
         </ul>
       </div>
       <div className="navbar-right">
-        <input type="text" placeholder="Search..." className="search-bar" />
         <div className="profile">
-          <img src="/path-to-profile-icon.png" alt="Profile Icon" className="profile-icon" />
-          <span className="profile-name">Your Name</span>
+          &nbsp;
         </div>
       </div>
     </nav>

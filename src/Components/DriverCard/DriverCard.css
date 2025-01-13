@@ -57,7 +57,7 @@
     justify-content: space-between;
 }
 
-.highlight {
+.highlight, .country-link {
     color: #FF6969;
 }
 
