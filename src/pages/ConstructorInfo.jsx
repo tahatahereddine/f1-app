@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactCountryFlag from 'react-country-flag';
+import { Link } from 'react-router-dom';
 
 function ConstructorInfo() {
     const { id } = useParams();
     const [constructor, setConstructor] = useState(null);
     const [alpha2Code, setAlpha2Code] = useState(null);
     const [countryName, setCountryName] = useState(null);
+    const [countryId, setCountryId] = useState(null);
 
 
     useEffect(() => {
@@ -36,6 +38,7 @@ function ConstructorInfo() {
             const data = await response.json();
             setAlpha2Code(data.alpha2_code);
             setCountryName(data.name);
+            setCountryId(data.id);
         } catch (error) {
             console.error('Error fetching country code:', error);
         }
@@ -75,7 +78,9 @@ function ConstructorInfo() {
                         <h2 style={{ fontSize: '2em', color: '#222', marginBottom: '20px' }}>{constructor.full_name} <ReactCountryFlag countryCode={alpha2Code} style={{ fontSize: '2rem'  }} /></h2>
                         <hr style={{ margin: '20px 0', border: 'none', borderTop: '2px solid #ccc' }} />
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', backgroundColor: '#333333', color: '#fff', padding: '20px', borderRadius: '10px' }}>
-                            <p><strong style={{ color: '#FF6969' }}>Country:</strong> {' ' + countryName} {alpha2Code && <ReactCountryFlag countryCode={alpha2Code} style={{ fontSize: '1.5rem'  }} />}</p>
+                            <p><strong style={{ color: '#FF6969' }}>Country:</strong> {' '}
+                            <Link to={`/country-info/${countryId}`} style={{color: "white"}}>{countryName}</Link> {''}
+                                {alpha2Code && <ReactCountryFlag countryCode={alpha2Code} style={{ fontSize: '1.5rem'  }} />}</p>
                             <p><strong style={{ color: '#FF6969' }}>Best Championship Position:</strong> {constructor.best_championship_position}</p>
                             <p><strong style={{ color: '#FF6969' }}>Best Starting Grid Position:</strong> {constructor.best_starting_grid_position}</p>
                             <p><strong style={{ color: '#FF6969' }}>Best Race Result 🏎:</strong> {constructor.best_race_result}</p>
