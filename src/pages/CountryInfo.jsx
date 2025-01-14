@@ -15,7 +15,7 @@ const CountryInfo = () => {
 
     const fetchCountry = async () => {
         try {
-            const response = await fetch(`http://localhost:8000/country-stats/${countryId}`);
+            const response = await fetch(`http://localhost:8000/api/country-stats/${countryId}`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

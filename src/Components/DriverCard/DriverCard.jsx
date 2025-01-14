@@ -11,7 +11,7 @@ function DriverCard(props) {
     useEffect(() => {
         async function fetchCountryCode() {
             try {
-                const response = await fetch(`http://localhost:8000/country/${driver.nationality_country_id}`);
+                const response = await fetch(`http://localhost:8000/api/country/${driver.nationality_country_id}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch country data');
                 }
@@ -30,6 +30,31 @@ function DriverCard(props) {
         }
     }, [driver.nationality_country_id]);
 
+    const [constructorName, setConstructorName] = useState('');
+    const [constructorId, setConstructorId] = useState('');
+
+    useEffect(() => {
+        async function fetchConstructorData() {
+            try {
+                const response = await fetch(`http://localhost:8000/api/drivers/${driver.id}/latest-season`);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch constructor data');
+                }
+                const data = await response.json();
+                setConstructorName(data.constructor_full_name || 'Unknown');
+                setConstructorId(data.constructor_id || '');
+                console.log('Constructor data:', data);
+            } catch (error) {
+                console.error('Error fetching constructor data:', error);
+                setConstructorName('Unknown');
+            }
+        }
+
+        if (driver.id) {
+            fetchConstructorData();
+        }
+    }, [driver.id]);
+
     return (
         <div className="driver-card">
             <div className="driver-image">
@@ -42,7 +67,7 @@ function DriverCard(props) {
                 <h2>
                     <ReactCountryFlag countryCode={countryCode} style={{ fontSize: "2.5rem" }} /> {driver.full_name}
                 </h2>
-                <h3>#{driver.permanent_number}</h3>
+                <h3>#{driver.permanent_number || '11'}</h3>
                 <div className="driver-stats">
                     <span><strong>🏁 Starts:</strong> <span className="highlight">{driver.total_race_starts}</span></span>
                     <span><strong>🏆 Championships:</strong> <span className="highlight">{driver.total_championship_wins}</span></span>
@@ -54,8 +79,12 @@ function DriverCard(props) {
                 <hr />
                 <div className="driver-extra">
                     <p>
-                        <strong>Current Team:</strong> <br />
-                        <span className="highlight">{driver.team || 'Unknown'}</span>
+                        <strong>Latest Team:</strong> <br />
+                        <span className="highlight">
+                            <Link to={`/constructor-info/${constructorId}`} className="country-link">
+                                {constructorName}
+                            </Link>
+                        </span>
                     </p>
                     <p>
                         <strong>Country:</strong> <br />
@@ -68,7 +97,8 @@ function DriverCard(props) {
                     </p>
                     <p>
                         <strong>Date of Birth:</strong> <br />
-                        <span className="highlight">{driver.date_of_birth}</span></p>
+                        <span className="highlight">{driver.date_of_birth} {driver.date_of_death ? `- ${driver.date_of_death}` : ''}</span>
+                    </p>
                 </div>
             </div>
         </div>

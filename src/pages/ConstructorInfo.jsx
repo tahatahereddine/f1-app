@@ -17,7 +17,7 @@ function ConstructorInfo() {
 
     const fetchConstructor = async () => {
         try {
-            const response = await fetch(`http://localhost:8000/constructors/${id}`);
+            const response = await fetch(`http://localhost:8000/api/constructors/${id}`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -31,7 +31,7 @@ function ConstructorInfo() {
 
     const fetchCountryCode = async (countryId) => {
         try {
-            const response = await fetch(`http://localhost:8000/country/${countryId}`);
+            const response = await fetch(`http://localhost:8000/api/country/${countryId}`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

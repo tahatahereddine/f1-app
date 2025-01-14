@@ -28,7 +28,7 @@ const Compare = () => {
         try {
             const endpoint = comparisonType === 'driver' ? 'drivers' : 'constructors';
             const response = await fetch(
-                `http://localhost:8000/${endpoint}?search=${encodeURIComponent(query)}&page=1`
+                `http://localhost:8000/api/${endpoint}?search=${encodeURIComponent(query)}&page=1`
             );
 
             if (!response.ok) {
@@ -45,7 +45,7 @@ const Compare = () => {
 
     const fetchCountries = async () => {
         try {
-            const response = await fetch(`http://localhost:8000/country`);
+            const response = await fetch(`http://localhost:8000/api/country`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

@@ -14,7 +14,7 @@ const Standing = () => {
 
     const fetchStandings = async () => {
         try {
-            const response = await fetch(`http://localhost:8000/standings/${category}/${year}`);
+            const response = await fetch(`http://localhost:8000/api/standings/${category}/${year}`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

@@ -53,7 +53,7 @@ const Drivers = () => {
     const fetchDrivers = async (page) => {
         try {
             const response = await fetch(
-                `http://localhost:8000/drivers?page=${page}&search=${search}&sort_by=${sortBy}&sort_order=${sortOrder}`
+                `http://localhost:8000/api/drivers?page=${page}&search=${search}&sort_by=${sortBy}&sort_order=${sortOrder}`
             );
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -68,7 +68,7 @@ const Drivers = () => {
 
     const fetchCountries = async () => {
         try {
-            const response = await fetch(`http://localhost:8000/country`);
+            const response = await fetch(`http://localhost:8000/api/country`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

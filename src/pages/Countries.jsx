@@ -51,7 +51,7 @@ const Countries = () => {
     const fetchCountries = async (page) => {
         try {
             const response = await fetch(
-                `http://localhost:8000/country-stats?page=${page}&search=${search}&sort_by=${sortBy}&sort_order=${sortOrder}`
+                `http://localhost:8000/api/country-stats?page=${page}&search=${search}&sort_by=${sortBy}&sort_order=${sortOrder}`
             );
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);

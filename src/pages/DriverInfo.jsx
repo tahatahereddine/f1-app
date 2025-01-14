@@ -12,7 +12,7 @@ function DriverInfo() {
 
     const fetchDriver = async () => {
         try {
-            const response = await fetch(`http://localhost:8000/drivers/${id}`);
+            const response = await fetch(`http://localhost:8000/api/drivers/${id}`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
